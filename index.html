@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vishal Sharma | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top left, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      z-index: 1000;
+    }
+    header h1 {color: #00e0ff; font-size: 1.6em;}
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      transition: 0.3s;
+    }
+    nav a:hover {color: #00e0ff;}
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10%;
+    }
+    .hero-text {max-width: 550px;}
+    .hero-text h2 {font-size: 3em; color: #00e0ff;}
+    .hero-text h3 {
+      font-size: 1.4em;
+      font-weight: 400;
+      margin-top: 10px;
+      color: #ddd;
+    }
+    .hero-text p {
+      margin-top: 20px;
+      line-height: 1.7;
+      color: #ccc;
+      font-size: 1em;
+    }
+    .hero-text button {
+      margin-top: 30px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      background: #00e0ff;
+      color: #000;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .hero-text button:hover {
+      background: #fff;
+      transform: scale(1.05);
+    }
+
+    /* human animation */
+    .human {
+      width: 380px;
+      height: 380px;
+      background: url('https://cdn.dribbble.com/users/1787323/screenshots/15488906/media/f2d4f5cbab8a329a4c403df7f2a46b56.gif') no-repeat center/cover;
+      border-radius: 50%;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%,100% {transform: translateY(0);}
+      50% {transform: translateY(-15px);}
+    }
+
+    section {padding: 100px 10%;}
+    h2.section-title {
+      text-align: center;
+      font-size: 2.5em;
+      color: #00e0ff;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    h2.section-title::after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 3px;
+      background: #00e0ff;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .skills, .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      padding: 25px;
+      border-radius: 18px;
+      text-align: center;
+      transition: 0.4s;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px rgba(0,224,255,0.4);
+    }
+    .card h3 {color: #00e0ff; margin-bottom: 12px;}
+    .card p {color: #ccc; font-size: 0.95em; margin-bottom: 20px;}
+    .card a {
+      display: inline-block;
+      margin: 6px;
+      padding: 8px 16px;
+      border-radius: 25px;
+      background: #00e0ff;
+      color: #000;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .card a:hover {background: #fff;}
+
+    footer {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      text-align: center;
+      padding: 30px 10%;
+      color: #aaa;
+      margin-top: 50px;
+    }
+
+    /* Typewriter Effect */
+    .typewriter {
+      border-right: 3px solid #00e0ff;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 4s steps(30, end), blink 0.75s step-end infinite;
+      display: inline-block;
+    }
+    @keyframes typing {
+      from {width: 0;}
+      to {width: 100%;}
+    }
+    @keyframes blink {
+      50% {border-color: transparent;}
+    }
+
+    /* Scroll Reveal */
+    .reveal {opacity: 0; transform: translateY(60px); transition: 1s all ease;}
+    .reveal.active {opacity: 1; transform: translateY(0);}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Vishal Sharma</h1>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-text">
+    <h2>Hi, I'm Vishal Sharma 👋</h2>
+    <h3 class="typewriter">Full Stack Web Developer</h3>
+    <p>I’m passionate about creating interactive and responsive web applications using modern technologies.  
+       I combine clean design with human-like animations to make websites feel alive and inspiring.</p>
+    <button onclick="window.location.href='#contact'">Contact Me</button>
+  </div>
+  <div class="human"></div>
+</section>
+
+<section id="skills">
+  <h2 class="section-title">My Skills</h2>
+  <div class="skills reveal">
+    <div class="card"><h3>Frontend</h3><p>HTML, CSS, JavaScript, React</p></div>
+    <div class="card"><h3>Backend</h3><p>Python, JSON Database, Node.js (Learning)</p></div>
+    <div class="card"><h3>Tools</h3><p>GitHub, VS Code, Netlify, Render</p></div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="section-title">Projects</h2>
+  <div class="projects reveal">
+    <div class="card">
+      <h3>WEATHER APP API System</h3>
+      <p>This link checks the weather.</p>
+      <a href="https://vishal26-carediter.github.io/weather-app-/" target="_blank">Live link</a>
+      
+    </div>
+    <div class="card">
+      <h3>E-Commerce Website (ShopKaro)</h3>
+      <p>Full-stack e-commerce project with product management and cart system.</p>
+      <a href="https://vishal26-carediter.github.io/frontend-e-commerce-" target="_blank">Live link</a>
+     
+    </div>
+    <div class="card">
+      <h3>BUSINESS Management Site</h3>
+      <p>BUSINESS Website React.JS </p>
+      <a href=" https://vishal26-carediter.github.io/business-site" target="_blank">Live link</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">Contact Me</h2>
+  <div class="reveal" style="text-align:center;">
+    <p>📞 8302626672</p>
+    <p>📧 <a href="mailto:vishalsharma6672@gmail.com" style="color:#00e0ff;">vishalsharma6672@gmail.com</a></p>
+    <p>📍 Jaipur, Rajasthan</p>
+    <p><a href="https://github.com/vishal26-carediter" target="_blank" style="color:#00e0ff;">GitHub Profile</a></p>
+  </div>
+</section>
+
+<footer>© 2025 Vishal Sharma | Designed with 💙 Passion & Code</footer>
+
+<script>
+  // Scroll Animation
+  window.addEventListener('scroll', reveal);
+  function reveal() {
+    var reveals = document.querySelectorAll('.reveal');
+    for (var i = 0; i < reveals.length; i++) {
+      var windowheight = window.innerHeight;
+      var revealtop = reveals[i].getBoundingClientRect().top;
+      var revealpoint = 150;
+      if (revealtop < windowheight - revealpoint) {
+        reveals[i].classList.add('active');
+      }
+    }
+  }
+</script>
+
+</body>
+</html>
